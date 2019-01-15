@@ -3,7 +3,7 @@
 <head>
 	<title>Word Guess Game</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
@@ -12,14 +12,14 @@
 	<div class= "col-sm-12">
 		<h1>Hangman: Jazz Edition</h1>
 		<p>Guess the name of song, musician, instrument, or city related to jazz</p>
-</div>
+</div>s
 <!-- images of instruments and vinyl -->
 <div class="Container">
 	<div class= "row">
 		<div class="col-sm-12">
-		<img class="rounded-circle" src="./images/geert-pieters-588258-unsplash.jpg">
-		<img class="rounded-circle" src="./images/mink-mingle-109837-unsplash.jpg">
-		<img class="rounded-circle" src="./images/priscilla-du-preez-486098-unsplash.jpg">
+		<img class="rounded-circle" src="assets/images/geert-pieters-588258-unsplash.jpg">
+		<img class="rounded-circle" src="assets/images/mink-mingle-109837-unsplash.jpg">
+		<img class="rounded-circle" src="assets/images/priscilla-du-preez-486098-unsplash.jpg">
 
 <!-- Game portion -->
 	
@@ -59,6 +59,7 @@
 	<div class="row justify-content-center">
 		<div class="col-sm-9 numGuesses">
 			<p>Number of guesses remaining:</p>
+				<span class="badge badge-primary badge-pill" id='guesses-left'></span>
 		</div>
 		
 	</div>
@@ -67,7 +68,7 @@
 	<div class="row justify-content-center">
 		<div class="col-sm-9 guessed">
 			<p>Letters already guessed:</p>
-			
+			<span id="letters-already-guessed"></span>
 		</div>
 		
 	</div>
@@ -79,7 +80,7 @@
 
 	
 </div>
-<script type="text/javascript" src="javascript/game.js">		
+<script type="text/javascript" src="assets/javascript/game.js">		
 </script>
 
 </body>

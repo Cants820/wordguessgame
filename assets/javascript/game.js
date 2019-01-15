@@ -2,15 +2,20 @@
 
 var currentWord;
 
-var numberOfGuessesRemaining;
+var numberOfGuessesRemaining = 9;
 
-var lettersAlreadyGuessed;
+var lettersAlreadyGuessed = [];
+
+//checks if letter is correct
+var checkLetter = false;
 
 var wins=0;
 
 var losses=0;
 
-var arr=["trumpet", "saxaphone", "guitar", "drums", "microphone","Tenderly", "Stormy Weather", "Ella Fitzgerald", "Louis Armstrong", "New Orleans", "New York City", "Chet Baker", "Miles Davis", "Benny Goodman", "Count Basie", "Paris", "La Vie En Rose", "Summertime", "Cheek to Cheek","St.Louis", "piano", "Unforgettable", "Scat", "Stardust"]
+
+//make arr to to all lower case
+var arr=["trumpet", "saxaphone", "guitar", "drums", "microphone","tenderly", "stormy weather", "ella Fitzgerald", "louis armstrong", "new orleans", "new york city", "chet baker", "miles davis", "benny goodman", "count basie", "paris", "la vie en rose", "summertime", "cheek to cheek","St.Louis", "piano", "Unforgettable", "Scat", "Stardust"]
 
 
 // This will randomly select a word after the game is over
@@ -38,15 +43,55 @@ document.onkeyup= function(keypress){
 			chosenWord[x]= letter
 			
 			console.log(chosenWord)
+			checkLetter = true;
+		} 
+	
+	
+	}
+		if(checkLetter) {
+
+			} else {
+				numberOfGuessesRemaining--;
+				lettersAlreadyGuessed.push(letter);		
 		}
-		document.getElementById('wordGuessed').innerHTML = chosenWord.join(' ');
+	
+
+	if(wordCompare.toString() === chosenWord.toString()) {
+		winRound();
 	}
 
+
+		document.getElementById('wins').innerHTML = wins;
+		document.getElementById('wordGuessed').innerHTML = chosenWord.join(' ');
+		//show guesses left and letters guesses onto the DOM - J.C.
+		document.getElementById('guesses-left').innerHTML = numberOfGuessesRemaining;
+		document.getElementById('letters-already-guessed').innerHTML = lettersAlreadyGuessed;
+
+
+}
+
+function winRound() {
+
+		wins++;
+		console.log("wins",wins);
+		restartGame();
+
+	
+}
+
+
+// restart the game. reassign all values back to default.
+function restartGame(){
+	currentWord	= arr[Math.floor(Math.random()*arr.length)];
+	numberOfGuessesRemaining = 9;
+	lettersAlreadyGuessed = [];
 }
 
 
 // This is the function that will create an array out of the chosenWord
  function wordtoUnderscores(){
+
+
  	for ( var k=0; k<chosenWord.length; k++){
  		chosenWord[k]="_";
 
@@ -61,9 +106,5 @@ document.onkeyup= function(keypress){
  document.getElementById('losses').innerHTML = losses;
 
 // Functions for wins and losses tracker
-
-
-if (wordGuessed==currentWord);
-wins++
 
 
