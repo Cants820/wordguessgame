@@ -83,6 +83,8 @@ function winRound() {
 // restart the game. reassign all values back to default.
 function restartGame(){
 	currentWord	= arr[Math.floor(Math.random()*arr.length)];
+	chosenWord = currentWord.split("");
+	wordtoUnderscores();
 	numberOfGuessesRemaining = 9;
 	lettersAlreadyGuessed = [];
 }
